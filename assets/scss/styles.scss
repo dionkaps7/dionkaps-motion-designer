@@ -316,6 +316,17 @@ img{
     }
 }
 /* ===== WORK =====*/
+.video-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+video {
+  width: calc(33.33% - 10px);
+  height: auto;
+}
+
 .work{
     &__container{
         row-gap: 1rem;
