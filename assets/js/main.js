@@ -54,3 +54,27 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+
+
+const workItems = document.querySelectorAll('.work__item');
+const videoPopup = document.querySelector('.video-popup');
+const videoContainer = document.querySelector('.video-container');
+const closeBtn = document.querySelector('.close-btn');
+
+workItems.forEach((workItem) => {
+    const video = workItem.querySelector('video');
+    const playBtn = workItem.querySelector('.play-btn');
+
+    playBtn.addEventListener('click', () => {
+        videoContainer.innerHTML = '';
+        const clonedVideo = video.cloneNode(true);
+        videoContainer.appendChild(clonedVideo);
+        videoPopup.style.display = 'flex';
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    videoContainer.innerHTML = '';
+    videoPopup.style.display = 'none';
+});
